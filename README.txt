@@ -24,3 +24,7 @@ PLACEMENTS and LEETCODE dashboards
   assets/placements/   -> photos of selected students (e.g. student1.jpg)
 Both files start with SAMPLE data. Replace it with the real data, then set sample:false.
 Please get each student's permission before publishing their photo or phone number.
+
+QUANTITATIVE APTITUDE
+  data/aptitude.js                 -> the formula files shown on that page
+  assets/quantitative-aptitude/    -> the files, and thumbs/ for the small preview pictures

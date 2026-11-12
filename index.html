@@ -399,6 +399,55 @@ body.ready .hl>*:nth-child(6){animation:hin .9s .68s cubic-bezier(.2,.8,.2,1) bo
 .df.e{background:rgba(34,197,94,.16);color:#22c55e}.df.m{background:rgba(245,158,11,.16);color:#f59e0b}.df.h{background:rgba(239,68,68,.16);color:#ef4444}
 .ia .opn{min-width:96px;text-align:center;border:0;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.88rem}
 .dist{display:flex;height:12px;border-radius:12px;overflow:hidden;margin-top:12px;background:var(--border)}.dist i{display:block;height:100%;width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+
+/* ---- right-side hub cards ---- */
+.hubpanel{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:min(560px,100%);perspective:1100px}
+.pc{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:16px;min-height:215px;padding:22px;border-radius:24px;border:1px solid var(--border);background:var(--surface);color:var(--text);text-align:left;cursor:pointer;box-shadow:var(--shadow);transform-style:preserve-3d;transition:transform .15s ease-out,border-color .25s,box-shadow .3s;opacity:0}
+body.ready .pc{opacity:1;animation:pcin .95s cubic-bezier(.2,.9,.2,1) backwards;animation-delay:calc(var(--d,0)*1ms)}
+@keyframes pcin{from{opacity:0;transform:translateY(70px) rotateX(-32deg) scale(.86)}}
+.pc:hover{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 35%,transparent),var(--shadow)}
+.pc:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--accent) 28%,transparent),transparent 55%);opacity:0;transition:opacity .25s;pointer-events:none}
+.pc:hover:before{opacity:1}
+.pc .pg{font:700 .7rem var(--mono);letter-spacing:1.5px;color:var(--accent2);text-transform:uppercase}
+.pc h3{margin:5px 0 4px;font:700 1.3rem var(--head);transform:translateZ(26px)}
+.pc p{margin:0;color:var(--muted);font:.78rem var(--mono)}
+.pc .arr{position:absolute;right:18px;top:16px;font:700 1.25rem var(--mono);color:var(--accent);transition:transform .25s}
+.pc:hover .arr{transform:translate(5px,-5px)}
+.pc .pv{height:86px;display:flex;align-items:flex-end;gap:8px;transform:translateZ(40px)}
+.bars i{flex:1;align-self:flex-end;border-radius:7px 7px 2px 2px;background:linear-gradient(180deg,var(--accent3),var(--accent));height:22%;animation:bar 2.6s ease-in-out infinite;box-shadow:0 0 18px color-mix(in srgb,var(--accent) 35%,transparent)}
+.bars{display:flex;gap:8px;width:100%;height:100%}
+.bars i:nth-child(2){animation-delay:-.4s}.bars i:nth-child(3){animation-delay:-.8s}.bars i:nth-child(4){animation-delay:-1.2s}.bars i:nth-child(5){animation-delay:-1.6s}
+@keyframes bar{0%,100%{height:22%}50%{height:var(--h,90%)}}
+.lcv{align-items:center!important}
+.lcv b{font:700 2.4rem var(--mono);background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;animation:pulse2 2.4s ease-in-out infinite}
+@keyframes pulse2{50%{transform:scale(1.12)}}
+.lns{flex:1;display:grid;gap:8px}
+.lns i{display:block;height:9px;border-radius:6px;background:linear-gradient(90deg,var(--accent2),var(--accent));animation:ln 3.2s ease-in-out infinite;width:60%}
+.lns i:nth-child(2){animation-delay:-.7s}.lns i:nth-child(3){animation-delay:-1.4s}
+@keyframes ln{0%,100%{width:25%;opacity:.5}50%{width:96%;opacity:1}}
+.pc.cqa{grid-column:1/-1;min-height:150px;flex-direction:row;align-items:center}
+.orbit{position:relative;width:96px;height:96px;flex:none;margin-right:26px;transform:translateZ(40px)}
+.orbit:before{content:"";position:absolute;inset:14px;border:1px dashed color-mix(in srgb,var(--accent) 55%,transparent);border-radius:50%;animation:rspin 9s linear infinite}
+.orbit b{position:absolute;left:50%;top:50%;margin:-15px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--accent) 20%,var(--surface));border:1px solid var(--accent);font:700 1rem Georgia,serif;color:var(--accent);animation:orbit 8s linear infinite;animation-delay:calc(var(--i)*-2s);box-shadow:0 0 14px color-mix(in srgb,var(--accent) 40%,transparent)}
+@keyframes orbit{from{transform:rotate(0deg) translateX(40px) rotate(0deg)}to{transform:rotate(360deg) translateX(40px) rotate(-360deg)}}
+@media (max-width:560px){.hubpanel{grid-template-columns:1fr}.pc.cqa{grid-column:auto}}
+@media (prefers-reduced-motion:reduce){.pc{opacity:1!important}}
+.morph b{padding:0 4vw;text-align:center}
+/* ---- quantitative aptitude page ---- */
+#hc{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:none}
+#hub[data-k="qa"] #hc{display:block}
+#hub[data-k="qa"] .so1{background:var(--accent)}#hub[data-k="qa"] .so2{background:var(--accent3)}
+.tpc{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tpc span{font:600 .78rem var(--mono);padding:6px 12px;border-radius:99px;border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(4px);color:var(--muted);animation:popin .5s both;transition:transform .2s,border-color .2s,color .2s;cursor:default}
+.tpc span:hover{transform:translateY(-3px) scale(1.07);border-color:var(--accent);color:var(--accent)}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:22px;perspective:1100px}
+.qc{position:relative;overflow:hidden;display:flex;gap:18px;padding:18px;background:color-mix(in srgb,var(--surface) 90%,transparent);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);transform-style:preserve-3d;transition:transform .15s ease-out,border-color .2s;animation:popin .8s cubic-bezier(.2,.9,.2,1) backwards}
+.qc:hover{border-color:var(--accent)}
+.qc .th{flex:none;width:112px;aspect-ratio:3/4;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--bg);transform:translateZ(34px);box-shadow:0 16px 34px rgba(0,0,0,.35)}
+.qc .th img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.qc .qb{display:flex;flex-direction:column;justify-content:space-between;gap:12px;min-width:0;flex:1}
+.qc h4{margin:0 0 4px;font:700 1.08rem var(--head);transform:translateZ(22px)}.qc small{color:var(--muted);font:.74rem var(--mono)}
+.qc .ia{flex-wrap:wrap}
 </style>
 </head>
 <body class="intro-on">
@@ -415,13 +464,9 @@ body.ready .hl>*:nth-child(6){animation:hin .9s .68s cubic-bezier(.2,.8,.2,1) bo
 <h1><span>MCA-HUB</span></h1>
 <div class="ty"><span id="ty"></span><i></i></div>
 <div class="exg" id="exg"></div>
-<div class="exg hubs" id="hubs"></div>
 <button class="cont" id="cont" hidden></button>
 </div>
-<div class="hr">
-<div class="term" id="term"><div class="tb"><i></i><i></i><i></i><span id="fn">mca_hub.c</span></div><pre id="code"></pre></div>
-<div class="chip c1">∑ O(n log n)</div><div class="chip c2">model.fit()</div><div class="chip c3">G = (V, E)</div><div class="chip c4">ptr-&gt;next</div>
-</div>
+<div class="hr"><div class="hubpanel" id="rp"></div></div>
 <div class="mq"><div class="mt" id="mt"></div></div>
 </header>
 
@@ -433,6 +478,7 @@ body.ready .hl>*:nth-child(6){animation:hin .9s .68s cubic-bezier(.2,.8,.2,1) bo
 </div>
 
 <div id="hub">
+<canvas id="hc"></canvas>
 <div class="grid-bg sg"></div><i class="orb so1"></i><i class="orb so2"></i>
 <div class="sbarw"><button id="hback"><span>← MCA-HUB</span></button><div class="st" id="hst"></div><button class="tg" id="tg3" aria-label="Toggle theme">🌓</button></div>
 <div class="sbody" id="hbody"></div>
@@ -859,31 +905,6 @@ function scramble(el,t){if(!el||matchMedia("(prefers-reduced-motion:reduce)").ma
   setTimeout(t,d)})();
 })();
 
-/* ---------- typing terminal with 3 languages ---------- */
-var SN=[
-{n:"mca_hub.c",l:"c",c:'// pointers and structs\n#include <stdio.h>\n\nstruct Node { int data; struct Node *next; };\n\nint main() {\n  struct Node n = {42, NULL};\n  printf("%d\\n", n.data);\n  return 0;\n}'},
-{n:"model.py",l:"py",c:'# a tiny neural network layer\nimport numpy as np\n\nclass Layer:\n    def __init__(self, n_in, n_out):\n        self.w = np.random.randn(n_in, n_out)\n\n    def forward(self, x):\n        return np.tanh(x @ self.w)'},
-{n:"shape.cpp",l:"c",c:'// polymorphism in C++\nclass Shape {\n public:\n  virtual double area() = 0;\n};\n\nclass Circle : public Shape {\n  double r;\n public:\n  double area() override {\n    return 3.14159 * r * r;\n  }\n};'}];
-function hl(code,lang){
- var e=code.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
- var com=lang==="py"?"#.*":"\\/\\/.*",kw="int|struct|class|public|return|import|def|self|virtual|override|double|void|NULL|from|as|if|for";
- var re=new RegExp("("+com+")|(#include)|(&lt;[a-z.]+&gt;|\"[^\"\\n]*\")|\\b("+kw+")\\b|\\b(printf|main|forward|area|randn|tanh)\\b","g");
- return e.replace(re,function(m,a,b,c,d,f){if(a)return '<span class="c">'+a+'</span>';if(b)return '<span class="k">'+b+'</span>';if(c)return '<span class="s">'+c+'</span>';if(d)return '<span class="k">'+d+'</span>';return '<span class="f">'+f+'</span>'});
-}
-(function(){
- var el=$("code"),si=0,html=hl(SN[0].c,SN[0].l),pos=0,total;
- function cnt(h){var n=0,t=false;for(var q=0;q<h.length;q++){var c=h[q];if(c==="<")t=true;else if(c===">")t=false;else if(!t)n++}return n}
- total=cnt(html);
- function step(){
-  var o="",inTag=false,shown=0;
-  for(var k=0;k<html.length&&shown<pos;k++){var ch=html[k];o+=ch;if(ch==="<")inTag=true;else if(ch===">")inTag=false;else if(!inTag)shown++}
-  el.innerHTML=o+'<span class="cur"></span>';pos++;
-  if(pos>total+30){pos=0;si=(si+1)%SN.length;html=hl(SN[si].c,SN[si].l);total=cnt(html);$("fn").textContent=SN[si].n}
-  setTimeout(step,pos>total?60:32);
- }
- step();
-})();
-
 /* ---------- AI/ML neural network + floating code background ---------- */
 (function(){
  var cv=$("bg"),x=cv.getContext("2d"),W,H,layers=[4,7,7,3],nodes=[],edges=[],sig=[],toks=[],col={a:"#8b8bff",b:"#2de0cd"},fr=0;
@@ -933,9 +954,7 @@ try{
  var m3=wire(new THREE.IcosahedronGeometry(1.2,1),0x2de0cd,-4.8,-3,0);
  var m4=wire(new THREE.BoxGeometry(1.4,1.4,1.4),0x6b6bff,5.2,2.8,-2);
  var mx=0,my=0;
- hero.addEventListener("pointermove",function(e){var r=hero.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5;
-  $("term").style.transform="rotateY("+(mx*24)+"deg) rotateX("+(-my*20)+"deg)"});
- hero.addEventListener("pointerleave",function(){$("term").style.transform=""});
+ hero.addEventListener("pointermove",function(e){var r=hero.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5;});
  function size(){var w=hero.clientWidth,h=hero.clientHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix()}
  size();addEventListener("resize",size);
  var still=matchMedia("(prefers-reduced-motion:reduce)").matches;
@@ -947,6 +966,7 @@ try{
 </script>
 <script src="data/placements.js"></script>
 <script src="data/leetcode.js"></script>
+<script src="data/aptitude.js"></script>
 <script src="hubs.js"></script>
 </body>
 </html>
