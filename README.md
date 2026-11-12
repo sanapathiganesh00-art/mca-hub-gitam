@@ -32,6 +32,8 @@ The main objectives of MCA-HUB are:
 - To help students prepare for quantitative aptitude tests.
 - To make learning resources easy to find and use.
 - To create a simple, interactive, and student-friendly website.
+- ![Uploading Screenshot 2026-11-13 at 2.13.36 AM.png…]()
+
 
 ## 💡 3. Problem Statement
 
