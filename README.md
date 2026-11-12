@@ -63,6 +63,9 @@ MCA-HUB aims to solve this problem by providing a single platform where students
 
 ## ✨ 5. Main Features
 
+![Uploading MCA-HUB Neon Learning Platform README Infographic.png…]()
+
+
 ### 🏠 5.1 Home Page
 
 - Modern landing page.
