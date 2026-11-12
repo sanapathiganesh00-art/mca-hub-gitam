@@ -1,4 +1,4 @@
-# 🎓 MCA-HUB – MCA Student Learning & Placement Support Platform
+<img width="1470" height="956" alt="Screenshot 2026-11-13 at 2 13 31 AM" src="https://github.com/user-attachments/assets/d709e04f-7c31-4dd7-b7d1-db503f2179cf" /># 🎓 MCA-HUB – MCA Student Learning & Placement Support Platform
 
 <p align="center">
   <strong>A Centralized Learning and Career Support Platform for MCA Students</strong>
@@ -499,6 +499,7 @@ For example, you can use the MIT License by adding a `LICENSE` file containing t
 Thanks to everyone who supported the development and learning process behind this project.
 
 Special thanks to the open-source community and educational platforms that provide learning resources for students.
+
 
 ---
 
